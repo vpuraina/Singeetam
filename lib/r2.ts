@@ -33,6 +33,6 @@ export async function deleteObject(key: string) {
 
 export function buildTrackKey(userId: string, fileName: string) {
   const safeName = (fileName || "audio").replace(/[^a-zA-Z0-9._-]/g, "_");
-  const unique = typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36.substring(2));
+  const unique = typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substring(2);
   return `tracks/${userId}/${unique}-${safeName}`;
 }
